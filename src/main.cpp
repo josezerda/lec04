@@ -7,38 +7,46 @@
 using namespace std;
 
 // Declare a vehicle class
-class Myclass
+class Vehicle
 {
 public:
-    int x;
+    int passengers;
+    int fuelcap;
+    int mph;
 
-    Myclass(int i);     //Declare constructor
-    ~Myclass();     // Declare destuctor
-   
+    Vehicle(int p, int f, int m);     //Declare constructor
+    ~Vehicle();     // Declare destuctor
+
+    int range();    //compute and return the range
 };
 
-//Implement the constructor and destructor
-
-Myclass::Myclass(int i)
+//Implement the constructor
+Vehicle::Vehicle(int p, int f, int m)
 {
-    x = i;
+    passengers = p;
+    fuelcap = f;
+    mph = m;
     cout << "Constructor.." << endl;
 }
-Myclass::~Myclass()
+//Implement destructor
+Vehicle::~Vehicle()
 {
-    cout << "Destucting objects whose x value is " << x << endl;
+    cout << "Destucting objects.. " << endl;
 }
 
+inline int Vehicle::range()
+{
+    return fuelcap * mph;
 
-
-
+}
 
 int main()
 {
-    Myclass t1(5);
-    Myclass t2(19);
+    int rango;
+    // Pass values to Vehicle constructor
+    Vehicle minivan(7, 16, 21);
+    Vehicle sportscar(2, 14, 12);
 
-    cout << "Valores de x en t1 y t2: " << t1.x << " " << t2.x << endl;
-    
+    cout << "Minivan range: " << minivan.range() << " / Sportscar range: " << sportscar.range() << endl;
     return 0;
 }
