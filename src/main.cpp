@@ -6,53 +6,29 @@
 
 using namespace std;
 
-// Declare a vehicle class
-class Vehicle
+class Myclass
 {
-
-    int passengers;
-    int fuelcap;
-    int mph;
-
+    int x;
     public:
-    Vehicle(int p, int f, int m)
-    {
-        passengers = p;
-        fuelcap = f;
-        mph = m;
-    }
-    ~Vehicle(){}
-    int range()
-    {
-        return fuelcap * mph;
-    }
-    int get_passengers()
-    {
-        return passengers;
-    }
-    int get_fuelcap()
-    {
-        return fuelcap;
-    }
-    int get_mph()
-    {
-        return mph;
-    }
+        void set_x(int i){x = i;}
+        int get_x(){return x;}
 };
-
 
 int main()
 {
+    Myclass obs[4];
+    int i = 0;
 
-    // Pass values to Vehicle constructor
-    Vehicle minivan(7, 16, 21);
-    Vehicle sportscar(2, 14, 12);
+    for (i = 0; i < 4; i++)
+    {
+        obs[i].set_x(i);
+    }
 
-    cout << "Minivan range: " << minivan.range() << endl;
-    cout << "Minivan passengers: " << minivan.get_passengers() << endl;
-
-    cout << "Sportscar range: " << sportscar.range() << endl;
-    cout << "Sportscar mph: " << sportscar.get_mph() << endl;
-    
+    for (i = 0; i < 4; i++)
+    {
+        cout << "obs["<<i<<"].x= "<<obs[i].get_x()<<endl;
+        
+    }
+   
     return 0;
 }
