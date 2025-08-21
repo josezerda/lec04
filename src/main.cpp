@@ -6,24 +6,32 @@
 
 using namespace std;
 
-class P_example
+class Sample
 {
-    int num;
 public:
-    void set_num(int val) {num = val;}
-    void show_num() { cout << num << endl;}
+int x;
+int y;
+
+//Overload the default constructor
+Sample(){x = 0; y = 0;}
+
+//Constructor with one parameter
+Sample(int i){x = i; y = i;}
+
+//Constructor with two parameters
+Sample(int i, int j){x = i; y = j;}
+
 };
 
 int main()
 {
-    P_example ob, *p;   //declare an object and pointer to it
+    Sample t;       //invoke default constructor
+    Sample t1(5);   //Use Sample(int)
+    Sample t2(9,10);    //Use Sample (int, int)
 
-    ob.set_num(6);  // call functions directly on "ob"
-    ob.show_num();
-
-    p = &ob;        //assign p the address of ob
-    p->set_num(20);
-    p->show_num();
+    cout << "t.x: " << t.x << "   t.y: " << t.y << endl; 
+    cout << "t1.x: " << t1.x << "   t.y: " << t1.y << endl; 
+    cout << "t2.x: " << t2.x << "   t2.y: " << t2.y << endl; 
 
     return 0;
 }
