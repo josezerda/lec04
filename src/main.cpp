@@ -6,32 +6,25 @@
 
 using namespace std;
 
-class Sample
+class Test
 {
+    int a, b;
 public:
-int x;
-int y;
-
-//Overload the default constructor
-Sample(){x = 0; y = 0;}
-
-//Constructor with one parameter
-Sample(int i){x = i; y = i;}
-
-//Constructor with two parameters
-Sample(int i, int j){x = i; y = j;}
-
+    void setab(int i, int j){a = i; b = j;}
+    void showab()
+    {
+        cout << "a is: "<< a <<endl;
+        cout << "b is: "<< b <<endl;
+    }
 };
 
 int main()
 {
-    Sample t;       //invoke default constructor
-    Sample t1(5);   //Use Sample(int)
-    Sample t2(9,10);    //Use Sample (int, int)
+    Test ob1, ob2;
 
-    cout << "t.x: " << t.x << "   t.y: " << t.y << endl; 
-    cout << "t1.x: " << t1.x << "   t.y: " << t1.y << endl; 
-    cout << "t2.x: " << t2.x << "   t2.y: " << t2.y << endl; 
+    ob1 
+
+
 
     return 0;
 }
